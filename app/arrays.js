@@ -16,32 +16,31 @@ exports.arraysAnswers = {
 
   remove : function(arr, item) {
     for(var i = 0; i < arr.length - 1; i++){
-    console.log(arr)
-    console.log(arr.indexOf(item));
+    // console.log(arr)
+    // console.log(arr.indexOf(item));
       arr.splice(arr.indexOf(item), 1);
     }
-    console.log(arr)
+    // console.log(arr)
     return arr;
   },
 
   removeWithoutCopy : function(arr, item) {
-      for (i = 0; i < arr.length; i++) {
-        console.log(arr) // [1, 2, 2, 3, 4, 2, 2]
+      for (var i = 0; i < arr.length; i++) {
+        // console.log(arr) // [1, 2, 2, 3, 4, 2, 2]
         if (arr[i] === item) {
-          console.log(arr)
+          // console.log(arr)
           arr.splice(i, 1);
-          console.log(arr)
-          i = i - 1;
-          length = length - 1;
+          // console.log(arr)
+          i = i - 1;  //this will change the index bc the array is getting smaller each time with slice
         }
       }
-      console.log(arr)
+      // console.log(arr)
       return arr;
     },
 
   append : function(arr, item) {
    arr.push(item);
-   console.log(arr)
+  //  console.log(arr)
    return arr;
 
    },
@@ -49,21 +48,21 @@ exports.arraysAnswers = {
 
   truncate : function(arr) {
     arr.pop();
-    console.log(arr)
+    // console.log(arr)
     return arr;
   },
 
 // you should be able to add an item to the beginning of an array
   prepend : function(arr, item) {
     arr.unshift(item);
-    console.log(arr)
+    // console.log(arr)
     return arr;
   },
 
 // you should be able to remove the first item of an array
   curtail : function(arr) {
     arr.shift();
-    console.log(arr);
+    // console.log(arr);
     return arr;
   },
 
@@ -74,7 +73,7 @@ exports.arraysAnswers = {
 
   insert : function(arr, item, index) {
     arr.splice(index, 0, item);
-    console.log(arr); //will splice out at index[2] and push in the item which is z
+    // console.log(arr); //will splice out at index[2] and push in the item which is z
     return arr;
   },
 
@@ -86,8 +85,8 @@ exports.arraysAnswers = {
     for (var i = 0; i < length; i++) {
       if (arr[i] === item) {
         count++;
-        console.log(arr)
-        console.log(count)
+        // console.log(arr)
+        // console.log(count)
       }
     }
 
@@ -98,13 +97,13 @@ exports.arraysAnswers = {
   duplicates : function(arr) {
     var results = [];
     for (var i = 0, length = arr.length - 1; i < length; i++) {
-      console.log(results)
-      if((results.indexOf(arr[i]) == -1) && (arr.indexOf(arr[i], i + 1) != -1)) {
-        console.log(results)
+      // console.log(results)
+      if((results.indexOf(arr[i]) === -1) && (arr.indexOf(arr[i], i + 1) !== -1)) {
+        // console.log(results)
           results.push(arr[i]);
        }
     }
-    console.log(results);
+    // console.log(results);
     return results;
   },
 
@@ -125,7 +124,7 @@ exports.arraysAnswers = {
     for (var i = 0, length = arr.length; i < length; i++) {
       squaredArr.push(arr[i] * arr[i]);
     }
-    console.log(squaredArr) //[1,4,9,16]
+    // console.log(squaredArr) //[1,4,9,16]
     return squaredArr;
   },
 
